@@ -3,7 +3,7 @@ export default {
         const url = new URL(request.url);
 
         if (url.pathname.length > 256) {
-            return new Responce("URL Too Long", { status: 414 });
+            return new Response("URL Too Long", { status: 414 });
         }
 
         if (url.pathname.startsWith("/2014")) {
@@ -87,6 +87,18 @@ export default {
             }
 
             const contentType = responce.headers.get("content-type") || "";
+            if (
+                path.startsWith("/2025/") &&
+                (path.endsWith("/opengraph-image") ||
+                    path.endsWith("/twitter-image"))
+            ) {
+                const newHeaders = new Headers(responce.headers);
+                newHeaders.set("Content-Type", "image/png");
+                return new Response(responce.body, {
+                    status: responce.status,
+                    headers: newHeaders,
+                });
+            }
             if (contentType.includes("text/html")) {
                 const newHeaders = new Headers(responce.headers);
                 newHeaders.set("X-Robots-Tag", "noindex, nofollow");
@@ -109,14 +121,14 @@ export default {
         // Redirect /YYYY/ to /YYYY
         if (/^\/\d{4}\/$/.test(url.pathname)) {
             return Response.redirect(
-                `${url.origin}${url.pathname.slice(0, -1)}`,
+                `${url.origin}${url.pathname.slice(0, -1)}${url.search}`,
                 301,
             );
         }
         // Redirect /YYYY/index.html or /YYYY/index to /YYYY
         if (/^\/\d{4}\/index(\.html)?$/.test(url.pathname)) {
             return Response.redirect(
-                `${url.origin}${url.pathname.replace(/\/index(\.html)?$/, "")}`,
+                `${url.origin}${url.pathname.replace(/\/index(\.html)?$/, "")}${url.search}`,
                 301,
             );
         }
@@ -125,14 +137,14 @@ export default {
             /^\/\d{4}\/(?:[^/]+\/)*([^/]+)\/\1(?:\.html)?$/.test(url.pathname)
         ) {
             return Response.redirect(
-                `${url.origin}${url.pathname.replace(/\/([^/]+)(?:\/\1(?:\.html)?)$/, "/$1")}`,
+                `${url.origin}${url.pathname.replace(/\/([^/]+)(?:\/\1(?:\.html)?)$/, "/$1")}${url.search}`,
                 301,
             );
         }
         // Redirect /YYYY/something.html to /YYYY/something
         if (/^\/\d{4}\/.+\.html$/.test(url.pathname)) {
             return Response.redirect(
-                `${url.origin}${url.pathname.replace(/\.html$/, "")}`,
+                `${url.origin}${url.pathname.replace(/\.html$/, "")}${url.search}`,
                 301,
             );
         }
@@ -142,7 +154,7 @@ export default {
         }
         // Redirect /2016/sp/ to /2016/sp
         if (url.pathname === "/2016/sp/") {
-            return Response.redirect(`${url.origin}/2016/sp`, 301);
+            return Response.redirect(`${url.origin}/2016/sp${url.search}`, 301);
         }
 
         return assetsFetch(url.pathname);
