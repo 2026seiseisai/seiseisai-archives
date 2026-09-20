@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+2:I[59581,["9581","static/chunks/9581-78045bee4c251720.js","9986","static/chunks/app/exhibition-award/page-69973e182ee4a5d7.js"],""]
+3:I[50185,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+8:I[50185,[],"ViewportBoundary"]
+9:I[50185,[],"MetadataBoundary"]
+a:I[77852,[],"IconMark"]
+c:I[27324,[],""]
+d:I[88202,[],""]
+10:I[65776,["9581","static/chunks/9581-78045bee4c251720.js","1618","static/chunks/1618-7203580891ef74ee.js","7177","static/chunks/app/layout-b2db99e5cf97560d.js"],"default"]
+:HL["/2026/_next/static/css/43220873585ebc98.css","style"]
+:HL["/2026/_next/static/css/426807f1f3ac4f69.css","style"]
+:HL["/2026/_next/static/css/fcef063a7efd6ba5.css","style"]
+:HL["/2026/_next/static/css/8fba7e31afd5a7f1.css","style"]
+7:X
+f:X
+f:C
+0:{"buildId":"QImPTTW1vkWlDByHKskxS","data":[{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"page_page__RGw4W","children":[["$","div",null,{"className":"page_noise__B3s6z","aria-hidden":"true"}],["$","section",null,{"className":"page_panel__vsjtt","aria-labelledby":"award-title","children":[["$","p",null,{"className":"page_kicker__Kys2b","children":"SEISEISAI 2026 / EXHIBITION AWARD"}],["$","h1",null,{"id":"award-title","children":"興味深い展示だったで賞"}],["$","p",null,{"className":"page_lead__J9w2L","children":"投票は終了しました。ご参加ありがとうございました。"}],["$","$L2",null,{"href":"/exhibitions","className":"page_startButton__2Gko_","children":["展示一覧を見る ",["$","span",null,{"aria-hidden":"true","children":"→"}]]}]]}]]}],[["$","link","0",{"rel":"stylesheet","href":"/2026/_next/static/css/43220873585ebc98.css","precedence":"next"}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"興味深い展示だったで賞 | 菁々祭"}],["$","meta","1",{"name":"description","content":"第62回菁々祭の展示投票は終了しました。"}],["$","meta","2",{"property":"og:title","content":"東大寺学園菁々祭「Infinity」公式ホームページ"}],["$","meta","3",{"property":"og:description","content":"菁々祭公式ホームページ"}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","6",{"name":"twitter:title","content":"東大寺学園菁々祭「Infinity」公式ホームページ"}],["$","meta","7",{"name":"twitter:description","content":"菁々祭公式ホームページ"}],["$","link","8",{"rel":"icon","href":"/2026/favicon.ico"}],["$","$La","9",{}]]}]}]}],null]}],"isPartial":"$@b","staleTime":"$7","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}]}]]}],"isPartial":"$@e","staleTime":"$7","varyParams":"$f"},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/2026/_next/static/css/426807f1f3ac4f69.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/2026/_next/static/css/fcef063a7efd6ba5.css","precedence":"next"}],["$","link","2",{"rel":"stylesheet","href":"/2026/_next/static/css/8fba7e31afd5a7f1.css","precedence":"next"}]],["$","html",null,{"lang":"ja","children":[["$","head",null,{"children":[["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","link",null,{"rel":"icon","href":"/2026/favicon.ico"}],["$","link",null,{"rel":"icon","type":"image/svg+xml","href":"/2026/favicon.svg"}],["$","link",null,{"rel":"alternate icon","href":"/2026/favicon.ico"}],["$","link",null,{"rel":"shortcut icon","href":"/2026/favicon.ico"}]]}],["$","body",null,{"className":"archive-font","style":{"margin":0,"padding":"72px 0 0 0"},"children":["$","$L10",null,{"children":["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}],"notFound":[["$","main",null,{"className":"page_page__j5lAu","children":["$","section",null,{"className":"page_panel__HceTJ","aria-labelledby":"not-found-title","children":[["$","span",null,{"className":"page_ghostMark__4XZW0","aria-hidden":"true","children":"∞"}],["$","div",null,{"className":"page_visual__9oaDH","aria-hidden":"true","children":[["$","p",null,{"className":"page_routeLabel__LCUKy","children":"PAGE MISSING / 404"}],["$","div",null,{"className":"page_graphicStage__wa9Mk","children":["$","svg",null,{"className":"page_lostPageGraphic__IbbAq","viewBox":"0 0 460 315","focusable":"false","children":[["$","g",null,{"className":"page_paper__UVY_6","children":[["$","path",null,{"className":"page_paperShadow__vevwa","d":"M155 68H303L333 98V277H155Z"}],["$","path",null,{"className":"page_paperSheet__g4TQK","d":"M146 58H294L324 88V267H146Z"}],["$","path",null,{"className":"page_paperHeader__7fpE3","d":"M146 58H294V90H146Z"}],["$","circle",null,{"className":"page_paperDotPink__EZm_S","cx":"164","cy":"74","r":"4"}],["$","circle",null,{"className":"page_paperDotTeal__z9nnf","cx":"178","cy":"74","r":"4"}],["$","circle",null,{"className":"page_paperDotWhite__4ntxA","cx":"192","cy":"74","r":"4"}],["$","path",null,{"className":"page_paperFold__PcwqU","d":"M294 58V88H324Z"}],["$","text",null,{"className":"page_paperCode___vTP9","x":"171","y":"164","children":[["$","tspan",null,{"className":"page_paperCodeAccent__qkJIG","children":"4"}],["$","tspan",null,{"children":"04"}]]}],["$","text",null,{"className":"page_paperStatus__rmFc4","x":"173","y":"192","children":"PAGE LOST"}],["$","path",null,{"className":"page_paperRule__pFy_u","d":"M173 211H274"}],"$L11","$L12","$L13","$L14","$L15"]}],"$L16","$L17","$L18"]}]}],"$L19"]}],"$L1a"]}]}],["$L1b"]]}]}]}]]}]]}],"isPartial":"$@1c","staleTime":"$7","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@1d","rootVaryParams":null,"needsRuntimeRequest":"$@1e"}
+:HL["/2026/_next/static/css/975006241dbf01dd.css","style"]
+5:null
+11:["$","path",null,{"className":"page_paperRuleShort__FDvpY","d":"M173 226H245"}]
+12:["$","circle",null,{"className":"page_errorBadge__9SZws","cx":"296","cy":"232","r":"25"}]
+13:["$","path",null,{"className":"page_errorCross__u51rj","d":"M286 222L306 242M306 222L286 242"}]
+14:["$","path",null,{"className":"page_paperAccentPink__P0VnH","d":"M146 260H245"}]
+15:["$","path",null,{"className":"page_paperAccentTeal__DjxTY","d":"M245 260H324"}]
+16:["$","g",null,{"className":"page_sparkOne__O13cG","children":["$","path",null,{"d":"M75 55V75M65 65H85"}]}]
+17:["$","g",null,{"className":"page_sparkTwo__xDJlk","children":["$","path",null,{"d":"M385 72V88M377 80H393"}]}]
+18:["$","rect",null,{"className":"page_sparkDiamond__AfXBK","x":"386","y":"239","width":"12","height":"12","transform":"rotate(45 392 245)"}]
+19:["$","div",null,{"className":"page_visualMeta__inizr","children":[["$","span",null,{"children":"ROUTE / UNKNOWN"}],["$","span",null,{"children":"62ND · INFINITY"}]]}]
+1a:["$","div",null,{"className":"page_copy__Vuu8t","children":[["$","p",null,{"className":"page_eyebrow__Sj09q","children":"NOT FOUND"}],["$","h1",null,{"id":"not-found-title","children":"Page not found"}],["$","p",null,{"className":"page_description__36_6O","children":"お探しのページは見つかりませんでした。URLが変更されたか、 ページがまだ公開されていない可能性があります。"}],["$","$L2",null,{"className":"page_homeLink__46P_d","href":"/","children":[["$","span",null,{"children":"トップページへ戻る"}],["$","svg",null,{"className":"page_arrow___Nh1q","viewBox":"0 0 24 24","aria-hidden":"true","children":["$","path",null,{"d":"M5 12h14M14 6l6 6-6 6"}]}]]}]]}]
+1b:["$","link","0",{"rel":"stylesheet","href":"/2026/_next/static/css/975006241dbf01dd.css","precedence":"next"}]
+7:300
+1e:true
+7:C
+1d:0
+b:"$undefined"
+e:"$undefined"
+1c:"$undefined"
+6:"$undefined"

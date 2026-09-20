@@ -1,0 +1,6 @@
+:HL["/2026/_next/static/css/426807f1f3ac4f69.css","style"]
+:HL["/2026/_next/static/css/fcef063a7efd6ba5.css","style"]
+:HL["/2026/_next/static/css/8fba7e31afd5a7f1.css","style"]
+:HL["/2026/_next/static/css/4958b7ec09e5685c.css","style"]
+:HL["/2026/_next/static/css/975006241dbf01dd.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"exhibitions","param":null,"prefetchHints":4192,"slots":{"children":{"name":"slug","param":{"type":"d","key":"%E6%AD%B4%E5%8F%B2%E9%83%A8%E8%8F%81%E5%8F%B2%E4%BC%9A","siblings":["list"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"QImPTTW1vkWlDByHKskxS"}

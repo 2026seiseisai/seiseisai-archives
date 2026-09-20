@@ -43,6 +43,8 @@ export default {
             );
 
             if (
+                path === "/2026/404" ||
+                path === "/2026/404/" ||
                 path === "/2025/404" ||
                 path === "/2024/404/404" ||
                 path === "/2023/404/404" ||
@@ -71,6 +73,9 @@ export default {
 
             if (responce.status === 404) {
                 // Custom 404 handling
+                if (path.startsWith("/2026/")) {
+                    return assetsFetch("/2026/404/");
+                }
                 if (path.startsWith("/2025/")) {
                     return assetsFetch("/2025/404");
                 }
