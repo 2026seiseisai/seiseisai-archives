@@ -1,7 +1,13 @@
 {
     "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
     "files": {
-        "includes": ["_worker.js", "_routes.json", "package.json", "biome.json"]
+        "includes": [
+            "_worker.js",
+            "_routes.json",
+            "package.json",
+            "biome.json",
+            "scripts/**/*.mjs"
+        ]
     },
     "formatter": {
         "indentStyle": "space",

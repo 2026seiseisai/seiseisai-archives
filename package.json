@@ -2,9 +2,10 @@
     "name": "seiseisai-archives",
     "private": true,
     "scripts": {
+        "build": "node scripts/build-pages.mjs",
         "check": "biome check",
-        "format": "biome format --write _worker.js _routes.json package.json biome.json",
-        "dev": "wrangler pages dev ./ --local"
+        "format": "biome format --write _worker.js _routes.json package.json biome.json scripts/build-pages.mjs",
+        "dev": "node scripts/build-pages.mjs && wrangler pages dev dist --local"
     },
     "devDependencies": {
         "@biomejs/biome": "^2.5.11",
