@@ -3,7 +3,7 @@
     "private": true,
     "scripts": {
         "check": "biome check",
-        "format": "biome format --write _worker.js package.json biome.json",
+        "format": "biome format --write _worker.js _routes.json package.json biome.json",
         "dev": "wrangler pages dev ./ --local"
     },
     "devDependencies": {

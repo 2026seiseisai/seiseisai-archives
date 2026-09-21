@@ -38,11 +38,15 @@ export default {
         }
 
         async function assetsFetch(path) {
+            const assetUrl = new URL(path, url.origin);
+            assetUrl.search = url.search;
             let responce = await env.ASSETS.fetch(
-                new Request(`${url.origin}${path}`, request),
+                new Request(assetUrl, request),
             );
 
             if (
+                path === "/404" ||
+                path === "/404/" ||
                 path === "/2026/404" ||
                 path === "/2026/404/" ||
                 path === "/2025/404" ||
@@ -62,11 +66,10 @@ export default {
             if (responce.status === 404) {
                 const filename = path.split("/").at(-1);
                 if (!filename.includes(".")) {
+                    const retryUrl = new URL(`${path}/${filename}`, url.origin);
+                    retryUrl.search = url.search;
                     responce = await env.ASSETS.fetch(
-                        new Request(
-                            `${url.origin}${path}/${filename}`,
-                            request,
-                        ),
+                        new Request(retryUrl, request),
                     );
                 }
             }
@@ -84,6 +87,9 @@ export default {
                 }
                 if (path.startsWith("/2021/")) {
                     return assetsFetch("/2021/error/404");
+                }
+                if (!/^\/\d{4}(?:\/|$)/.test(path)) {
+                    return assetsFetch("/404/");
                 }
 
                 const headers = new Headers();
@@ -119,9 +125,9 @@ export default {
         if (/^\/\d{4}$/.test(url.pathname)) {
             return assetsFetch(`${url.pathname}/`);
         }
-        // Only allow /YYYY/* paths
+        // Serve the current static site at the root; keep year archives below.
         if (!/^\/\d{4}\/.*$/.test(url.pathname)) {
-            return new Response("Not Found", { status: 404 });
+            return assetsFetch(url.pathname);
         }
         // Redirect /YYYY/ to /YYYY
         if (/^\/\d{4}\/$/.test(url.pathname)) {
