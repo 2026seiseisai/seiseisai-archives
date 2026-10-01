@@ -1,5 +1,23 @@
-import { cp, lstat, mkdir, readdir, rm } from "node:fs/promises";
-import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
+import { createHash } from "node:crypto";
+import {
+    cp,
+    lstat,
+    mkdir,
+    readdir,
+    readFile,
+    rename,
+    rm,
+    writeFile,
+} from "node:fs/promises";
+import {
+    basename,
+    dirname,
+    isAbsolute,
+    join,
+    relative,
+    resolve,
+    sep,
+} from "node:path";
 import { fileURLToPath } from "node:url";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
@@ -101,6 +119,63 @@ async function copyDirectoryContents(sourceDirectory, targetDirectory) {
     }
 }
 
+async function removeCurrentArchiveNotice() {
+    const htmlNotice =
+        '<aside class="archive-notice" aria-label="保存版のご案内"><span>2026年 保存版</span></aside>';
+    const scriptNotice =
+        '(0,n.jsx)("aside",{className:"archive-notice","aria-label":"保存版のご案内",children:(0,n.jsx)("span",{children:"2026年 保存版"})})';
+    const textFiles = [];
+    const renamedChunks = [];
+
+    async function collectTextFiles(directory) {
+        for (const entry of await readdir(directory, { withFileTypes: true })) {
+            const path = join(directory, entry.name);
+            if (entry.isDirectory()) {
+                await collectTextFiles(path);
+            } else if (/\.(?:html|txt|js)$/.test(entry.name)) {
+                textFiles.push(path);
+            }
+        }
+    }
+
+    await collectTextFiles(distDirectory);
+    for (let index = 0; index < textFiles.length; index++) {
+        const path = textFiles[index];
+        const original = await readFile(path, "utf8");
+        const updated = path.endsWith(".html")
+            ? original.replaceAll(htmlNotice, "")
+            : path.endsWith(".js")
+              ? original.replaceAll(scriptNotice, "null")
+              : original;
+        if (updated === original) continue;
+
+        let outputPath = path;
+        if (path.endsWith(".js")) {
+            // Use a new URL so cached layout chunks cannot restore the notice.
+            const hash = createHash("sha256")
+                .update(updated)
+                .digest("hex")
+                .slice(0, 16);
+            outputPath = path.replace(/-[a-f0-9]+\.js$/, `-${hash}.js`);
+            if (outputPath === path)
+                throw new Error(`Expected a hashed chunk: ${path}`);
+            await rename(path, outputPath);
+            textFiles[index] = outputPath;
+            renamedChunks.push([basename(path), basename(outputPath)]);
+        }
+        await writeFile(outputPath, updated);
+    }
+
+    for (const path of textFiles) {
+        const original = await readFile(path, "utf8");
+        let updated = original;
+        for (const [oldName, newName] of renamedChunks) {
+            updated = updated.replaceAll(oldName, newName);
+        }
+        if (updated !== original) await writeFile(path, updated);
+    }
+}
+
 async function countFiles(targetPath) {
     const stats = await lstat(targetPath);
 
@@ -134,6 +209,8 @@ await assertRegularFile(routesPath, "_routes.json");
 await removeExistingDist();
 await mkdir(distDirectory, { recursive: true });
 await copyDirectoryContents(currentDirectory, distDirectory);
+// Transform only yearless output; copy the archived years unchanged afterward.
+await removeCurrentArchiveNotice();
 
 for (const yearDirectory of yearDirectories) {
     await cp(
