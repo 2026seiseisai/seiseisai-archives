@@ -222,6 +222,11 @@ for (const yearDirectory of yearDirectories) {
 
 await cp(workerPath, join(distDirectory, "_worker.js"), { force: false });
 await cp(routesPath, join(distDirectory, "_routes.json"), { force: false });
+// Workers uses the root script; do not publish Pages control files as assets.
+await writeFile(
+    join(distDirectory, ".assetsignore"),
+    "/_worker.js\n/_routes.json\n",
+);
 
 console.log(
     `Built ${distDirectory} from current (${await countFiles(distDirectory)} files, ${yearDirectories.length} year directories).`,
